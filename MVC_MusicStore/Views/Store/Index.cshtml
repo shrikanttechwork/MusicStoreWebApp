@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MVC_MusicStore.Models.Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Album Store</h2>
+
+<ul id="album-list">
+    @foreach (var album in Model)
+    {
+        <li>
+            <a href="@Url.Action("Details", "Store",
+                new { id = album.AlbumId })">
+
+                <img alt="@album.Title" src="~/@album.AlbumArtUrl" />
+                <span>@album.Title</span>
+                <p class="button">         
+                @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = album.AlbumId }, "")     
+                </p>
+                
+            </a>
+        </li>
+    }
+</ul>

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MVC_MusicStore.Models.Genre>
+
+<ul id="categories">
+    @foreach (var genre in Model)
+    {
+        <li> 
+            <a href="" data-id="@genre.Name" class="genreName">@genre.Name</a>
+        </li>
+    }
+</ul>
